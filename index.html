@@ -27,8 +27,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 18px;
+    gap: clamp(10px, 2.5vh, 18px);
     padding: 16px;
+    min-height: 100%;
   }
 
   a { color: #06c; }
@@ -36,7 +37,7 @@
 
   h1 {
     margin: 0;
-    font-size: 60px;
+    font-size: clamp(34px, 11vw, 60px);
     font-weight: normal;
     letter-spacing: 0.02em;
     font-family: "FreeSansBold", "Arial Black", sans-serif;
@@ -55,25 +56,26 @@
 
   p.tagline {
     margin: 10px 0 0;
-    font-size: 20px;
+    font-size: clamp(14px, 4vw, 20px);
     color: #444;
   }
 
   p.description {
     margin: 10px 0 0;
-    font-size: 14px;
+    font-size: clamp(12px, 3.2vw, 14px);
     color: #888;
     max-width: 50ch;
+    padding: 0 8px;
   }
 
   header {
     text-align: center;
-    margin-bottom: 36px;
+    margin-bottom: clamp(20px, 5vw, 36px);
   }
 
   .carousel {
     position: relative;
-    width: min(70vw, 640px);
+    width: min(90vw, 640px);
   }
 
   .carousel-track {
@@ -115,8 +117,8 @@
   }
 
   .carousel-btn:hover { background: #f0f0f0; }
-  .carousel-btn.prev { left: -14px; }
-  .carousel-btn.next { right: -14px; }
+  .carousel-btn.prev { left: 8px; }
+  .carousel-btn.next { right: 8px; }
 
   .dots {
     display: flex;
@@ -139,8 +141,10 @@
 
   .downloads {
     display: flex;
-    gap: 24px;
-    font-size: 19px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: clamp(14px, 4vw, 24px);
+    font-size: clamp(15px, 4vw, 19px);
   }
 
   .downloads a {
@@ -153,13 +157,20 @@
     color: rgb(160, 70, 15);
   }
 
+  p.version {
+    margin: -8px 0 14px;
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+  }
+
   footer {
     font-size: 12px;
     color: #999;
   }
 
-  footer a { color: #999; }
-  footer a:hover { color: #000; }
+  footer a { color: #0000FF; }
+  footer a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
@@ -188,6 +199,7 @@
     <a href="https://github.com/ev-98/shooter/releases/latest/download/shooter-macos.zip">Mac</a>
     <a href="https://github.com/ev-98/shooter/releases/latest/download/shooter-linux.zip">Linux</a>
   </div>
+  <p class="version">Latest build: v1.0.0</p>
 
   <footer>
     <a href="https://ev4.life/">ev4.life</a>
